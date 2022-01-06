@@ -32,17 +32,18 @@ public class TBounceTwo extends TBase {
     x & y are flipped so the translations are y, x
         x|   y|angle
     S   0,   0,   0
-    D -90,  30,
-    E-120,  60,
-    F -90,  90,
-    G   0,  90, 180
+    D   0, -30,
+    E -30, -90,
+    F -60,-120,
+    g -90, -90
+    G   0, -90, 180
     */
     start = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(30), Units.inchesToMeters(-90)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(-120)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(90), Units.inchesToMeters(-90)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(90), Units.inchesToMeters(0)));
-    end = new Pose2d(Units.inchesToMeters(90), Units.inchesToMeters(0), Rotation2d.fromDegrees(180));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(-30), Units.inchesToMeters(0)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(-90), Units.inchesToMeters(-30)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(-120), Units.inchesToMeters(-60)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(-90), Units.inchesToMeters(-90)));
+    end = new Pose2d(Units.inchesToMeters(10), Units.inchesToMeters(-90), Rotation2d.fromDegrees(180-5));
   }
 
 }

@@ -50,11 +50,11 @@ public class TSlalom extends TBase {
     Waypoints.add(new Translation2d(Units.inchesToMeters(300), Units.inchesToMeters(30))); //E
     Waypoints.add(new Translation2d(Units.inchesToMeters(270), Units.inchesToMeters(60))); //F
     Waypoints.add(new Translation2d(Units.inchesToMeters(240), Units.inchesToMeters(30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(210), Units.inchesToMeters(0)));  //G
-    Waypoints.add(new Translation2d(Units.inchesToMeters(150), Units.inchesToMeters(0)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(90), Units.inchesToMeters(0)));   //H
-    Waypoints.add(new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(30), Units.inchesToMeters(60)));  //I
+    Waypoints.add(new Translation2d(Units.inchesToMeters(210), Units.inchesToMeters(6)));  //G
+    Waypoints.add(new Translation2d(Units.inchesToMeters(150), Units.inchesToMeters(6)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(90), Units.inchesToMeters(6)));   //H
+    Waypoints.add(new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(36)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(30), Units.inchesToMeters(66)));  //I
     end = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(60), Rotation2d.fromDegrees(180));
   }
 

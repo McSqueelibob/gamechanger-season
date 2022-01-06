@@ -11,7 +11,7 @@ public class Vars {
   
   // robot characteristics
   public static final double WHEEL_DIAMETER = 6; // inches
-  public static final double MAX_VELOCITY = 114; // inches/sec
+  public static final double MAX_VELOCITY = 84; // inches/sec
   public static final double MAX_ACCELERATION = 220; // inches/sec^2
   public static final StatorCurrentLimitConfiguration DRIVETRAIN_CURRENTLIMIT = // Current limiting applied to the drivetrain
     new StatorCurrentLimitConfiguration(

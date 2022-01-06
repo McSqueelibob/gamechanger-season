@@ -17,6 +17,8 @@ import edu.wpi.first.wpilibj.util.Units;
  */
 public class TBounceThree extends TBase {
 
+  private int error = 8;
+
   public TBounceThree() {
 
   }
@@ -28,17 +30,17 @@ public class TBounceThree extends TBase {
         x|   y|angle
     S   0,   0,   0
     H   0,  90,
-    I -30, 120,
-    J -60, 120,
-    K -90,  90,
-    L -90,   0, 180
+    I  30, 120,
+    J  60, 120,
+    K  90,  90,
+    L  90,   0, 180
     */
     start = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
     Waypoints.add(new Translation2d(Units.inchesToMeters(90), Units.inchesToMeters(0)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(120), Units.inchesToMeters(-30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(120), Units.inchesToMeters(-60)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(90), Units.inchesToMeters(-90)));
-    end = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(-90), Rotation2d.fromDegrees(180));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(120), Units.inchesToMeters(30)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(120), Units.inchesToMeters(60-error)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(90), Units.inchesToMeters(90-error)));
+    end = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(90-error), Rotation2d.fromDegrees(180));
   }
 
 }

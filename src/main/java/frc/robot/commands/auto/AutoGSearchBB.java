@@ -16,18 +16,19 @@ import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.Vars;
 import frc.robot.commands.arm.ArmToPosition;
 import frc.robot.commands.arm.ArmZero;
-import frc.robot.commands.auto.trajectories.TGSearchA;
+import frc.robot.commands.auto.trajectories.TGSearchBB;
+import frc.robot.commands.auto.trajectories.TGSearchBR;
 import frc.robot.commands.intake.IntakePower;
 
 /** 
- * Auto made to run the Galactic Search Path A
+ * Auto made to run the Galactic Search Path B
  * List of trajectories used (* means that it has red ball ` means it has a blue ball)
- * TGSearch B: C1 C3* D5* E6` A6* B7* C9* C11
+ * TGSearch B: C1 B3* D5* D6` B7* B8` D10`
  * Runs the intake the entire time while following the path
  */
-public class AutoGSearchA extends SequentialCommandGroup {
+public class AutoGSearchBB extends SequentialCommandGroup {
 
-    public AutoGSearchA(
+    public AutoGSearchBB(
                         DrivetrainSubsystem m_drivetrain,
                         FeedSubsystem feed,
                         HopperSubsystem hopper,
@@ -36,13 +37,12 @@ public class AutoGSearchA extends SequentialCommandGroup {
                         ) 
     {
         super(
-            //preps the arm
+            //preps the arm for intake
             new ArmZero(arm),
-            new ArmToPosition(arm, Vars.ARM_OUT-5),
+            new ArmToPosition(arm, Vars.ARM_OUT),
 
-            //runs the path and intakes the balls
             new ParallelDeadlineGroup(
-                new RamseteContainer(m_drivetrain, new TGSearchA()).getCommand(),
+                new RamseteContainer(m_drivetrain, new TGSearchBB()).getCommand(),
                 new IntakePower(intake, Vars.INTAKE_PERCENT-.1)
             ),
 

@@ -15,9 +15,11 @@ import edu.wpi.first.wpilibj.util.Units;
 /**
  *
  */
-public class TGSearchB extends TBase {
+public class TGSearchBR extends TBase {
 
-  public TGSearchB() {
+  int error = 5;
+
+  public TGSearchBR() {
 
   }
 
@@ -37,12 +39,9 @@ public class TGSearchB extends TBase {
     N   0, 300,   0
     */
     start = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(120), Units.inchesToMeters(-30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(150), Units.inchesToMeters(-30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(180), Units.inchesToMeters(30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(210), Units.inchesToMeters(30)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(270), Units.inchesToMeters(-30)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(60-error), Units.inchesToMeters(30)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(120-error), Units.inchesToMeters(-30)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(180-error), Units.inchesToMeters(30)));
     end = new Pose2d(Units.inchesToMeters(300), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
   }
 

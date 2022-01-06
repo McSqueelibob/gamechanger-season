@@ -33,13 +33,12 @@ public class TBounceFour extends TBase {
         x|   y|angle
     S   0,   0,   0
     M   0, -30,
-    N  30, -60,
-    O  60, -60,  90
+    N -30, -60, 270
     */
     start = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
     Waypoints.add(new Translation2d(Units.inchesToMeters(-30), Units.inchesToMeters(0)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(-60), Units.inchesToMeters(30)));
-    end = new Pose2d(Units.inchesToMeters(-60), Units.inchesToMeters(60), Rotation2d.fromDegrees(90));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(-60), Units.inchesToMeters(-30)));
+    end = new Pose2d(Units.inchesToMeters(-60), Units.inchesToMeters(-60), Rotation2d.fromDegrees(90));
   }
 
 }

@@ -28,13 +28,13 @@ public class TBounceOne extends TBase {
         x|   y|angle
     S   0,   0,   0
     A   0,  30,
-    B -30,  30,
-    C -60,  60,  90
+    B  30,  60,
+    C  60,  60,  90
     */
     start = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
     Waypoints.add(new Translation2d(Units.inchesToMeters(30), Units.inchesToMeters(0)));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(30), Units.inchesToMeters(-30)));
-    end = new Pose2d(Units.inchesToMeters(60), Units.inchesToMeters(-60), Rotation2d.fromDegrees(90));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(30)));
+    end = new Pose2d(Units.inchesToMeters(60), Units.inchesToMeters(60), Rotation2d.fromDegrees(90));
   }
 
 }

@@ -15,13 +15,11 @@ import edu.wpi.first.wpilibj.util.Units;
 /**
  *
  */
-public class TGSearchBOne extends TBase {
+public class TGSearchAB extends TBase {
 
-  public double endSpeed() {
-    return 60;
-  }
+  int error = 0;
 
-  public TGSearchBOne() {
+  public TGSearchAB() {
 
   }
 
@@ -29,20 +27,21 @@ public class TGSearchBOne extends TBase {
   void build() {
     /*
     x & y are flipped so the translations are y, x
-    subtract 15 from y to get the front of the robot
-        x|   y|angle| path
-    S   0,   0,   0   1
-    A  30,  60,       1
-    B -30, 120,   0   1
-    C -30, 150,       2
-    D  30, 180,   0   2
-    E  30, 210,       3
-    F -30, 270,       3
-    N   0, 300,   0   3
+        x|   y|angle
+    S   0,   0,   0
+    A   0,  60,
+    B -30, 120,
+    C -60, 150,
+    D  60, 150,
+    E  30, 180,
+    F   0, 240, 
+    N   0, 300,   0
     */
     start = new Pose2d(Units.inchesToMeters(0), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
-    Waypoints.add(new Translation2d(Units.inchesToMeters(60), Units.inchesToMeters(30)));
-    end = new Pose2d(Units.inchesToMeters(120), Units.inchesToMeters(-30), Rotation2d.fromDegrees(0));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(150-error), Units.inchesToMeters(-55)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(180-error), Units.inchesToMeters(25)));
+    Waypoints.add(new Translation2d(Units.inchesToMeters(240-error), Units.inchesToMeters(0)));
+    end = new Pose2d(Units.inchesToMeters(300), Units.inchesToMeters(0), Rotation2d.fromDegrees(0));
   }
 
 }
